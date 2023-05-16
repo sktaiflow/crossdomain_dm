@@ -11,8 +11,8 @@ with DAG(
     "dag_nes",
     default_args={"retries": 2},
     description="DAG with own plugins",
-    schedule="00 10 * * *",
-    start_date=pendulum.datetime(2023, 5, 17, tz="KST"),
+    schedule="00 1 * * *",
+    start_date=pendulum.datetime(2023, 5, 17, tz="UTC"),
     catchup=False,
     tags=["demo"],
 ) as dag:
