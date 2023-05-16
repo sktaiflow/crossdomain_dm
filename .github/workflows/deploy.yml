@@ -1,0 +1,22 @@
+name: Deploy
+  
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    name: deploy to efs
+    runs-on: [self-hosted, linux]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Deploy on onprem
+      run: |
+        pwd
+        EFS_SUBDIR="develop" && [[ ${GITHUB_REF:11} == "main" ]] && EFS_SUBDIR="master"
+        echo "/efs/${EFS_SUBDIR}/airflow/dags/${GITHUB_REPOSITORY#*-}"
+        ls
+        mkdir -p "/efs/${EFS_SUBDIR}/airflow/dags/${GITHUB_REPOSITORY#*-}"
+        rsync -a --delete --exclude=".*" --delete-excluded . "/efs/${EFS_SUBDIR}/airflow/dags/${GITHUB_REPOSITORY#*-}"
