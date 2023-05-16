@@ -21,7 +21,7 @@ with DAG(
 
     nes_task = NesOperator(
         task_id="NES_Task",
-        input_nb="https://github.com/sktaiflow/crossdomain_dm/blob/main/cross_DM_OS_Expansion_BQ_1cell.ipynb",
+        input_nb="https://github.com/sktaiflow/crossdomain_dm/blob/main/dags/cross_DM_OS_Expansion_BQ_1cell.ipynb",
     )
     nes_task.doc_md = dedent(
         """\
