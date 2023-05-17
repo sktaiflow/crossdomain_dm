@@ -14,7 +14,7 @@ with DAG(
     schedule="00 1 * * *",
     start_date=pendulum.datetime(2023, 5, 17, tz="UTC"),
     catchup=False,
-    tags=["demo"],
+    tags=["crossdomain","DM"],
 ) as dag:
 
     dag.doc_md = __doc__
