@@ -23,8 +23,7 @@ with DAG(
         task_id="DM_daily_update",
         input_nb="https://github.com/sktaiflow/crossdomain_dm/blob/main/dags/cross_DM_OS_Expansion_BQ_1cell.ipynb",
         runtime="ye-k8s-custom",
-        profile="x1109351_2")
-        
+        profile="x1109351_2"
     )
     nes_task.doc_md = dedent(
         """\
