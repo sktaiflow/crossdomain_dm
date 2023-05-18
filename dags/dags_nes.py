@@ -11,7 +11,7 @@ with DAG(
     "dag_nes",
     default_args={"retries": 2},
     description="DAG with own plugins",
-    schedule="45 1 * * *",
+    schedule="50 1 * * *",
     start_date=pendulum.datetime(2023, 5, 17, tz="UTC"),
     catchup=False,
     tags=["crossdomain","DM"],
@@ -23,7 +23,7 @@ with DAG(
         task_id="DM_daily_update",
         input_nb="https://github.com/sktaiflow/crossdomain_dm/blob/main/dags/cross_DM_OS_Expansion_BQ_1cell.ipynb",
         runtime="ye-k8s-custom",
-        profile="x1109351_2"),
+        profile="x1109351_2")
         
     )
     nes_task.doc_md = dedent(
