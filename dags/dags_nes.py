@@ -20,7 +20,8 @@ with DAG(
     dag.doc_md = __doc__
 
     nes_task = NesOperator(
-        task_id="NES_Task",
+        task_id="DM_daily_update",
+        get_nes_operator(runtime="ye-k8s-custom", profile="x1109351_2")
         input_nb="https://github.com/sktaiflow/crossdomain_dm/blob/main/dags/cross_DM_OS_Expansion_BQ_1cell.ipynb",
     )
     nes_task.doc_md = dedent(
