@@ -11,7 +11,7 @@ with DAG(
     "dag_nes",
     default_args={"retries": 2},
     description="DAG with own plugins",
-    schedule="20 5 * * *",
+    schedule="30 0 * * *",
     start_date=pendulum.datetime(2023, 5, 17, tz="UTC"),
     catchup=False,
     tags=["crossdomain","DM"],
